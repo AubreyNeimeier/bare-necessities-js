@@ -44,11 +44,12 @@ $(function newEvent(){
             
             var event = data
             $(`ul.${event["date"]}`).append(showNewEvent(event));
-            document.getElementById("new_event").reset();
+            
             //$("#new_event").reset();
         })
         
     })
+    document.getElementById("new_event").reset();
 })
 
 function showNewEvent(event){
