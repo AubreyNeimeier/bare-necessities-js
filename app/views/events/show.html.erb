@@ -16,3 +16,4 @@ on <%= @event.date %> from <%=@event.start_time%> until <%=@event.end_time %>
 </div>
 
 <button data-event="<%=@event.id%>" id="eventTasks" onclick="getTasks(this); return false;" type="button">Show Tasks</button>
+<div id="tasks"></div>

@@ -38,7 +38,13 @@ function getTasks(event){
     // we don't have a route for events/34/tasks. we just have events/34. 
     // we'll request the event and then the associated tasks thru ORM serializations
     $.getJSON(`/events/${id}`, function(event){
-        debugger;
+        $("#tasks").append(showTasks(event["tasks"]))
 
+    })
+}
+
+function showTasks(tasks){
+    return tasks.map(task => {
+        return `<p>task["description"]</p>`
     })
 }
