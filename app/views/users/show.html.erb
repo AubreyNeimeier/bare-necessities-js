@@ -1,0 +1,103 @@
+
+<button id="weeklyButton">See your Weekly Report</button>
+<% # link instead of button <a href="#" id="weeklyButton">See your Weekly Report</a> %>
+<div id="weekly"> </div>
+
+
+<h1 class="month_title"> <%= month_name%> </h1>
+<% stylesheet_link_tag "/calendar" %>
+<ul class="weekdays">
+  <li>Sun</li>
+  <li>Mon</li>
+  <li>Tue</li>
+  <li>Wed</li>
+  <li>Thu</li>
+  <li>Fri</li>               
+  <li>Sat</li>
+</ul>
+
+<div class="grid-container">
+<%= add_empty_divs %>
+
+<%# THIS IS WHERE WE NEED TO ADD EMPTY DIVS TO SHIFT EVERYTHING APPROPRIATELY %>
+<% i = 1 %>
+<% while i <= days_in_month %> 
+  <div class="<%= starting_div_class + i %>"><%= i %>
+ 
+    <% if Event.found_event(starting_div_class + i, current_user) %>
+      <ul><% Event.found_event(starting_div_class + i, current_user).each do |event| %>
+        <li><button data-event="<%=event.id%>" onclick="jsEventShow(this)"><%= event.title %></li>
+        <div id="event-details-<%=event.id%>"></div>
+      <% end %>
+      </ul>
+    <% end %> 
+  
+  
+  </div>
+  <% i += 1 %>
+  <% end %> 
+</div>
+
+
+<hr>
+<hr>
+<h2 class="home_page">Add an Event</h2>
+<div class="new_event_form">
+  <%= form_for(@event) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %><br>
+      <%= f.label :description %>
+      <%= f.text_field :description %><br>
+      <%= f.label :date %>
+      <%= f.date_select :date, selected: Date.today%><br>
+      <%= f.label :start_time %>
+      <%= f.text_field :start_time %><br>
+      <%= f.label :end_time %>
+      <%= f.text_field :end_time %><br>
+
+      <%=f.submit "Create Event"%>
+  <% end %>
+</div> 
+
+<h2 class="home_page">Add a Task</h2>
+
+<div class="new_task_form">
+  <%= form_for(@task) do |f| %>
+      <%= f.label :event_id %>
+      <%= f.collection_select :event_id, current_user.events, :id, :title, {:prompt => "Select Related Event"}%><br>
+      <%= f.label :description %>
+      <%= f.text_field :description %><br>
+      <%= f.label :status %>
+      <%= f.text_field :status %><br>
+      <%=f.submit "Create Task"%>
+  <% end %>
+</div> 
+
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@event.errors.count, "error") %> prohibited this EVENT from being saved:</h2>
+ 
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @task.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@task.errors.count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% @task.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>

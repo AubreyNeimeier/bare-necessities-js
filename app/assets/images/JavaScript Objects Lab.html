@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <title>JavaScript Objects Lab</title>
+    <meta name="description" content="Practice manipulating JavaScript objects">
+    <meta name="author" content="Flatiron School">
+
+    <!-- Include Mocha's stylesheet to style test results -->
+    <link rel="stylesheet" href="JavaScript%20Objects%20Lab_files/mocha.css">
+  </head>
+
+  <body><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+//]]></script><script async="" src="JavaScript%20Objects%20Lab_files/browser-sync-client.js"></script>
+
+    <!-- <div> for Mocha to display test results. -->
+    <div id="mocha"><ul id="mocha-stats"><li class="progress"><canvas width="40" height="40" style=""></canvas></li><li class="passes"><a href="javascript:void(0);">passes:</a> <em>5</em></li><li class="failures"><a href="javascript:void(0);">failures:</a> <em>3</em></li><li class="duration">duration: <em>0.10</em>s</li></ul><ul id="mocha-report"><li class="suite"><h1><a href="http://localhost:8000/?grep=drivers">drivers</a></h1><ul><li class="test pass fast"><h2>defines a `driver` driver<span class="duration">3ms</span> <a href="http://localhost:8000/?grep=drivers%20defines%20a%20%60driver%60%20driver" class="replay">‣</a></h2><pre style="display: none;"><code>expect(typeof driver).to.equal(<span class="string">'object'</span>);</code></pre></li><li class="suite"><h1><a href="http://localhost:8000/?grep=drivers%20updateDriverWithKeyAndValue%5C(driver%2C%20key%2C%20value%5C)">updateDriverWithKeyAndValue(driver, key, value)</a></h1><ul><li class="test pass fast"><h2>returns an driver with the orignal key value pairs and the new key value pair<span class="duration">1ms</span> <a href="http://localhost:8000/?grep=drivers%20updateDriverWithKeyAndValue%5C(driver%2C%20key%2C%20value%5C)%20returns%20an%20driver%20with%20the%20orignal%20key%20value%20pairs%20and%20the%20new%20key%20value%20pair" class="replay">‣</a></h2><pre style="display: none;"><code>expect(updateDriverWithKeyAndValue(driver, <span class="string">'address'</span>, <span class="string">'<span class="number">11</span> Broadway'</span>)).to.eql({
+  name: <span class="string">'Sam'</span>,
+  address: <span class="string">'<span class="number">11</span> Broadway'</span>
+});</code></pre></li><li class="test pass fast"><h2>it does not modify the original driver, but rather returns a clone with the new data<span class="duration">0ms</span> <a href="http://localhost:8000/?grep=drivers%20updateDriverWithKeyAndValue%5C(driver%2C%20key%2C%20value%5C)%20it%20does%20not%20modify%20the%20original%20driver%2C%20but%20rather%20returns%20a%20clone%20with%20the%20new%20data" class="replay">‣</a></h2><pre style="display: none;"><code>updateDriverWithKeyAndValue(driver, <span class="string">'address'</span>, <span class="string">'<span class="number">11</span> Broadway'</span>);
+expect(driver[<span class="string">'address'</span>]).to.equal(undefined);</code></pre></li></ul></li><li class="suite"><h1><a href="http://localhost:8000/?grep=drivers%20destructivelyUpdateDriverWithKeyAndValue%5C(driver%2C%20key%2C%20value%5C)">destructivelyUpdateDriverWithKeyAndValue(driver, key, value)</a></h1><ul><li class="test pass fast"><h2>updates `driver` with the given `key` and `value` (it is destructive) and returns the entire updated driver<span class="duration">3ms</span> <a href="http://localhost:8000/?grep=drivers%20destructivelyUpdateDriverWithKeyAndValue%5C(driver%2C%20key%2C%20value%5C)%20updates%20%60driver%60%20with%20the%20given%20%60key%60%20and%20%60value%60%20%5C(it%20is%20destructive%5C)%20and%20returns%20the%20entire%20updated%20driver" class="replay">‣</a></h2><pre style="display: none;"><code>expect(destructivelyUpdateDriverWithKeyAndValue(driver, <span class="string">'address'</span>, <span class="string">'<span class="number">12</span> Broadway'</span>)).to.eql({
+  name: <span class="string">'Sam'</span>,
+  address: <span class="string">'<span class="number">12</span> Broadway'</span>
+});
+expect(driver).to.eql({
+  name: <span class="string">'Sam'</span>,
+  address: <span class="string">'<span class="number">12</span> Broadway'</span>
+});</code></pre></li></ul></li><li class="suite"><h1><a href="http://localhost:8000/?grep=drivers%20deleteFromDriverByKey%5C(driver%2C%20key%5C)">deleteFromDriverByKey(driver, key)</a></h1><ul><li class="test fail"><h2>deletes `key` from a clone of driver and returns the new driver (it is non-destructive) <a href="http://localhost:8000/?grep=drivers%20deleteFromDriverByKey%5C(driver%2C%20key%5C)%20deletes%20%60key%60%20from%20a%20clone%20of%20driver%20and%20returns%20the%20new%20driver%20%5C(it%20is%20non-destructive%5C)" class="replay">‣</a></h2><pre class="error">TypeError: newdriver is undefined@test/indexTest.js:49:7
+</pre><pre style="display: none;"><code>let newdriver = deleteFromDriverByKey(driver, <span class="string">'name'</span>);
+expect(newdriver[<span class="string">'name'</span>]).to.equal(undefined);</code></pre></li><li class="test pass fast"><h2>does not modify the original driver (it is non-destructive)<span class="duration">0ms</span> <a href="http://localhost:8000/?grep=drivers%20deleteFromDriverByKey%5C(driver%2C%20key%5C)%20does%20not%20modify%20the%20original%20driver%20%5C(it%20is%20non-destructive%5C)" class="replay">‣</a></h2><pre style="display: none;"><code>deleteFromDriverByKey(driver, <span class="string">'name'</span>);
+expect(driver[<span class="string">'name'</span>]).to.equal(<span class="string">'Sam'</span>);</code></pre></li></ul></li><li class="suite"><h1><a href="http://localhost:8000/?grep=drivers%20destructivelyDeleteFromDriverByKey%5C(driver%2C%20key%5C)">destructivelyDeleteFromDriverByKey(driver, key)</a></h1><ul><li class="test fail"><h2>returns driver without the delete key/value pair <a href="http://localhost:8000/?grep=drivers%20destructivelyDeleteFromDriverByKey%5C(driver%2C%20key%5C)%20returns%20driver%20without%20the%20delete%20key%2Fvalue%20pair" class="replay">‣</a></h2><pre class="error">TypeError: newdriver is undefined@test/indexTest.js:63:7
+</pre><pre style="display: none;"><code>let newdriver = destructivelyDeleteFromDriverByKey(driver, <span class="string">'name'</span>);
+expect(newdriver[<span class="string">'name'</span>]).to.equal(undefined);</code></pre></li><li class="test fail"><h2>modifies the original driver <a href="http://localhost:8000/?grep=drivers%20destructivelyDeleteFromDriverByKey%5C(driver%2C%20key%5C)%20modifies%20the%20original%20driver" class="replay">‣</a></h2><pre class="error">AssertionError: expected 'Sam' to equal undefinedAssertionError@node_modules/chai/chai.js:9320:13
+[3]&lt;/module.exports/Assertion.prototype.assert@node_modules/chai/chai.js:239:13
+assertEqual@node_modules/chai/chai.js:1383:7
+methodWrapper@node_modules/chai/chai.js:7709:18
+@test/indexTest.js:69:7
+</pre><pre style="display: none;"><code>let newdriver = destructivelyDeleteFromDriverByKey(driver, <span class="string">'name'</span>);
+expect(driver[<span class="string">'name'</span>]).to.equal(undefined);</code></pre></li></ul></li></ul></li></ul></div>
+
+    <!-- Include Mocha and set it up for BDD-style testing. -->
+    <script src="JavaScript%20Objects%20Lab_files/mocha.js"></script>
+    <script>mocha.setup('bdd');</script>
+
+    <!-- Include Chai as the matcher library. -->
+    <script src="JavaScript%20Objects%20Lab_files/chai.js"></script>
+
+    <!-- Include the student's JavaScript file. -->
+    <script src="JavaScript%20Objects%20Lab_files/index.js"></script>
+
+    <!-- Include the JavaScript file containing the tests. -->
+    <script src="JavaScript%20Objects%20Lab_files/indexTest.js"></script>
+
+    <!-- Include Flatiron School's test runner to push results to Learn. -->
+    <script src="JavaScript%20Objects%20Lab_files/learnBrowser.js"></script>
+  
+
+</body></html>

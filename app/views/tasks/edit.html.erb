@@ -1,0 +1,21 @@
+<%= link_to "Home", user_path(@task.user_id) %>
+<div class="show_content">
+<h1>Edit this task </h1>
+<h2><%=@event.title%></h2>
+<p><%=@event.date%></p>
+<%= form_for(@task) do |f| %>
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
+    <%= f.label :status %>
+    <%= f.text_field :status %><br>
+    <%=f.submit "Edit"%>
+<% end %>
+
+
+<h3> Current To Do List for <%=@event.title%></h3>
+<ul>
+    <% @event.tasks.each do |t| %>
+         <li><%= t.description%></li>
+    <% end %>
+</ul>
+</div>

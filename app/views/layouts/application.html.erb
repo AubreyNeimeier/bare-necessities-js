@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BareNecessities</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'POST'}) do %>
+    <input type="submit" value="Log Out">
+    <% end %> 
+    <br>
+      <%= link_to "Continue with Google", "/auth/google_oauth2", id: "sign_in" if !logged_in? %>
+    <br>
+
+  <div>
+    <%= yield %>
+  
+  </body>
+</html>
