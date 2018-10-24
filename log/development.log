@@ -31744,3 +31744,803 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 269ms (Views: 246.7ms | ActiveRecord: 16.7ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-10-24 10:56:31 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/learn/.rvm/gems/ruby-2.3.6/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1317ms (Views: 1290.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-24 10:56:40 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 101ms (Views: 99.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-24 10:56:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 165ms (Views: 109.7ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-24 10:56:44 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"towJVadVy+1G9E1D5iJPn5VvgTikrkiPNn9aNmtEbroPKO3/BcRJe2vJ994tFOpN4UO7SSNx1/jDE1RaycUq+A==", "user"=>{"username"=>"aubs", "password"=>"[FILTERED]"}, "commit"=>"log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "aubs"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 105ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-10-24 10:56:44 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-01' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (2.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-02' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-03' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-04' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-05' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-06' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-07' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-08' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-09' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-10' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-11' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-12' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-13' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-14' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-15' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-16' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-17' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-18' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-19' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-20' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-21' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-22' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-23' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-24' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-25' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-26' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-27' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-28' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-29' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-30' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-31' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:67
+  Rendered users/show.html.erb within layouts/application (158.7ms)
+Completed 200 OK in 303ms (Views: 219.8ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-24 10:56:58 -0700
+Processing by EventsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date_object >= '2018-10-24' AND date_object <='2018-10-31') ORDER BY "events"."date_object" ASC[0m
+  ↳ app/controllers/events_controller.rb:9
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 40]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:9
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 35]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:9
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 36]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:9
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.84ms)
+Completed 200 OK in 155ms (Views: 147.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events/40" for 127.0.0.1 at 2018-10-24 10:57:15 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"40"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 40]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (8.08ms)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 10:57:17 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (8.81ms)
+Completed 200 OK in 21ms (Views: 12.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 10:57:18 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 155ms (Views: 142.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 10:57:20 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (10.1ms)
+Completed 200 OK in 27ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 10:58:08 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (7.53ms)
+Completed 200 OK in 16ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:02:31 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 280ms (Views: 272.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-10-24 11:02:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-01' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-02' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-03' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-04' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-05' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-06' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-07' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-08' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-09' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-10' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-11' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-12' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-13' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-14' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-15' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-16' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-17' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-18' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-19' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-20' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-21' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-22' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-23' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-24' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-25' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-26' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-27' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-28' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-29' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-30' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-31' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:67
+  Rendered users/show.html.erb within layouts/application (106.2ms)
+Completed 200 OK in 192ms (Views: 166.3ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:02:53 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (7.4ms)
+Completed 200 OK in 19ms (Views: 10.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:02:55 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 109ms (Views: 104.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:02:56 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (5.89ms)
+Completed 200 OK in 16ms (Views: 7.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:03:15 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 291ms (Views: 281.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:03:17 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (5.17ms)
+Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-10-24 11:03:30 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-01' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-02' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-03' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-04' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-05' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-06' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-07' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-08' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-09' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-10' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-11' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-12' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-13' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-14' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-15' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-16' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-17' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-18' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-19' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-20' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-21' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-22' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-23' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-24' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-25' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-26' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-27' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-28' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-29' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-30' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-31' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:67
+  Rendered users/show.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 172ms (Views: 155.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:03:32 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (12.96ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:03:33 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 113ms (Views: 104.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:03:35 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (8.09ms)
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:05:04 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 200ms (Views: 190.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:05:26 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 204ms (Views: 193.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:06:15 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 317ms (Views: 302.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-24 11:06:38 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 85ms (Views: 74.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-24 11:06:39 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 84ms (Views: 70.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-24 11:06:41 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hiylvb4IaboDlfsf50d39j1DP3qCR5QahLRldyzdNOU/iEEXHJnrLC6oQYIscdIkSW8FCwWYC21x2Gsbjlxwpw==", "user"=>{"username"=>"aubs", "password"=>"[FILTERED]"}, "commit"=>"log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "aubs"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:27
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 93ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-10-24 11:06:42 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-01' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-02' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-03' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-04' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-05' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-06' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-07' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-08' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-09' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-10' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-11' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-12' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-13' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-14' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-15' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-16' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-17' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-18' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (9.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-19' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-20' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-21' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-22' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-23' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-24' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-25' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-26' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-27' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-28' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-29' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-30' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-31' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:67
+  Rendered users/show.html.erb within layouts/application (144.7ms)
+Completed 200 OK in 232ms (Views: 203.7ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:06:43 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (7.45ms)
+Completed 200 OK in 19ms (Views: 10.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:06:45 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 90ms (Views: 81.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:06:47 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (6.28ms)
+Completed 200 OK in 15ms (Views: 9.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:07:31 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 234ms (Views: 224.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/34" for 127.0.0.1 at 2018-10-24 11:07:35 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (8.3ms)
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/34/tasks/7" for 127.0.0.1 at 2018-10-24 11:20:06 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"event_id"=>"34", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:4
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:5
+  Rendering tasks/show.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+  ↳ app/views/tasks/show.html.erb:10
+  Rendered tasks/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 84ms (Views: 65.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/34/tasks/7/edit" for 127.0.0.1 at 2018-10-24 11:20:11 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"event_id"=>"34", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:10
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11
+  Rendering tasks/edit.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 34]]
+  ↳ app/views/tasks/edit.html.erb:17
+  Rendered tasks/edit.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 100ms (Views: 75.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-10-24 11:20:18 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-01' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-02' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-03' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-04' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-05' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-06' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-07' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-08' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-09' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-10' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-11' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-12' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-13' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-14' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-15' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-16' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-17' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-18' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-19' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-20' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-21' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-22' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-23' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-24' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-25' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-26' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-27' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-28' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-29' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-30' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (date = '2018-10-31' AND user_id = 1)[0m
+  ↳ app/views/users/show.html.erb:28
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:67
+  Rendered users/show.html.erb within layouts/application (107.6ms)
+Completed 200 OK in 180ms (Views: 163.2ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/events/32" for 127.0.0.1 at 2018-10-24 11:21:41 -0700
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = ?[0m  [["event_id", 32]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:23
+[active_model_serializers] Rendered EventSerializer with ActiveModelSerializers::Adapter::Attributes (10.52ms)
+Completed 200 OK in 80ms (Views: 14.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/events/32" for 127.0.0.1 at 2018-10-24 11:21:42 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:20
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 91ms (Views: 81.1ms | ActiveRecord: 0.4ms)
+
+

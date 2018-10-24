@@ -61,8 +61,9 @@ function getTasks(event){
 function showTasks(event){
     //debugger;
     event_id = event["id"] 
-    return event["tasks"].map(task => {
-        return `<p><a href="/events/${event_id}/tasks/${task["id"]}"> ${task["description"]} </a><p><br>`
+    let tasks = event["tasks"].map(task => {
+        return `<input type="checkbox" name="${task.id}" value="${task.id}"><a href="/events/${event_id}/tasks/${task["id"]}"> ${task["description"]} </a><br>`
     })
+    return (tasks + `<input type="submit" value="Mark as Complete">`)
 }
 
