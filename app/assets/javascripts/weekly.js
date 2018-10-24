@@ -1,6 +1,6 @@
 
 //////////////////////// HOME PAGE functions ///////////////////////////////////////////////////
-
+/// use getDay() JS function to print like 'Monday - Work - Detail cleaning 4 - 5 ' 
 function weekly(){
     $.getJSON("/events", function(events){
             $("#weekly").empty()
@@ -9,14 +9,14 @@ function weekly(){
     }
 
 function showWeekly(events){
-    /// use getDay() JS function to print like 'Monday - Work - Detail cleaning 4 - 5 ' 
+    
     return events.map(event => {
         return `<p>${event["date"]} - ${event["title"]} - ${event["description"]} </p>`
 
     })
 }
 
-//                for individual days and events. (the clickable event on each day and the details)
+/////////////////    for individual days and events. (the clickable event on each day and the details)
 function jsEventShow(event){
     let id = event.attributes[0].value
     $.getJSON(`/events/${id}`, function(event){
@@ -27,6 +27,20 @@ function jsEventShow(event){
 
 function showEventDetails(event){
     return `<a class="event-teaser-link" href="/events/${event.id}"> ${event["description"]} - ${event["start_time"]} - ${event["end_time"]} </a>`
+}
+
+
+
+////////////////////////FORM HIJACKING ///////////////////////////////////////////////
+function newEvent(){
+    $("#new_event").on("submit", function(e){
+        
+        $.post("/events", function(response){
+            debugger;
+            $("#new-events").html(data)
+        })
+        e.preventDefault();
+    })
 }
 
 /////////////////////// EVENT SHOW PAGE //////////////////////////////////////////////
@@ -51,3 +65,4 @@ function showTasks(event){
         return `<p><a href="/events/${event_id}/tasks/${task["id"]}"> ${task["description"]} </a><p><br>`
     })
 }
+
