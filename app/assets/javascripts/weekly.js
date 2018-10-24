@@ -43,12 +43,17 @@ $(function newEvent(){
         posting.done(function(data){
             
             var event = data
-            $("#new-event-response").text(event["title"]);
-            debugger;
+            $(`ul.${event["date"]}`).append(showNewEvent(event));
+            document.getElementById("new_event").reset();
+            //$("#new_event").reset();
         })
         
     })
 })
+
+function showNewEvent(event){
+    return `<li><button data-event="${event["id"]}" onclick="jsEventShow(this)">${event["title"]}</li>`
+}
 
 /////////////////////// EVENT SHOW PAGE //////////////////////////////////////////////
 

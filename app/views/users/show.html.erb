@@ -27,7 +27,7 @@
   <div class="<%= starting_div_class + i %>"><%= i %>
  
     <% if Event.found_event(starting_div_class + i, current_user) %>
-      <ul><% Event.found_event(starting_div_class + i, current_user).each do |event| %>
+      <ul class="<%= starting_div_class + i %>"><% Event.found_event(starting_div_class + i, current_user).each do |event| %>
         <li><button data-event="<%=event.id%>" onclick="jsEventShow(this)"><%= event.title %></li>
         <div id="event-details-<%=event.id%>"></div>
       <% end %>
