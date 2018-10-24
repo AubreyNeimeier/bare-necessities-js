@@ -64,6 +64,8 @@ function showTasks(event){
     let tasks = event["tasks"].map(task => {
         return `<input type="checkbox" name="${task.id}" value="${task.id}"><a href="/events/${event_id}/tasks/${task["id"]}"> ${task["description"]} </a><br>`
     })
-    return (tasks + `<input type="submit" value="Mark as Complete">`)
+    
+    return (tasks + `<input type="submit" value="Mark as Complete"> </form>`)
 }
 
+// let form_stuff = `<form id="todoForm" method="delete" action="/tasks/${task.id}">`

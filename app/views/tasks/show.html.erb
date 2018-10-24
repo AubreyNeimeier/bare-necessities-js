@@ -1,6 +1,6 @@
 
 <%= link_to "Home", user_path(@task.user_id) %>
-<%= link_to "Edit this Task", edit_event_task_path(@task.event, @task)%>
+<%= link_to "Edit this Task", edit_event_task_path(@task.event, @task)%>  <%= link_to "Delete", task_path(@task), method: 'delete' %>
 <div class="show_content">
 <h1> <%= @task.description %></h1>
 This task is <%= @task.status %> 
