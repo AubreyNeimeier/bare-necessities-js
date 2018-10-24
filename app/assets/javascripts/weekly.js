@@ -32,16 +32,23 @@ function showEventDetails(event){
 
 
 ////////////////////////FORM HIJACKING ///////////////////////////////////////////////
-function newEvent(){
-    $("#new_event").on("submit", function(e){
-        
-        $.post("/events", function(response){
-            debugger;
-            $("#new-events").html(data)
-        })
+$(function newEvent(){
+    $("#new_event").submit(function(e){
         e.preventDefault();
+        //serialize the values on the form
+        var values = $(this).serialize();
+        
+        //make a post request and route to create action
+        var posting = $.post("/events", values);
+        posting.done(function(data){
+            
+            var event = data
+            $("#new-event-response").text(event["title"]);
+            debugger;
+        })
+        
     })
-}
+})
 
 /////////////////////// EVENT SHOW PAGE //////////////////////////////////////////////
 

@@ -49,7 +49,9 @@ class EventsController < ApplicationController
         @event.date_object = @event.date.to_date
         
         if @event.save
-            redirect_to event_path(@event)
+            #binding.pry
+            render json: @event, status: 201
+            #redirect_to event_path(@event)
           
         else
             @event.date = Date.today

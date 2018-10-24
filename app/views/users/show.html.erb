@@ -1,7 +1,9 @@
 
+<p id="new-event-response"></p>
 <button type="button" id="weeklyButton" onclick="weekly(); return false;">See your Weekly Report</button>
 <% # link instead of button <a href="#" id="weeklyButton">See your Weekly Report</a> %>
 <div id="weekly"> </div>
+
 
 
 <h1 class="month_title"> <%= month_name%> </h1>
@@ -58,6 +60,8 @@
       <%=f.submit "Create Event"%>
   <% end %>
 </div> 
+
+
 
 <h2 class="home_page">Add a Task</h2>
 
