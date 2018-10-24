@@ -15,12 +15,12 @@ X 2. Must render at least one show page (show resource - 'one specific thing') v
     -- teaser includes link to see full on event show page where tasks will be listed (aka the originial The event link is to event -show path/view)
     QUESTIONS - HOW TO IMPLEMENT so that HTML OR JSON renders when clicking teaser link
 
-3. Your Rails application must dynamically render on the page at least one 'has-many' relationship through JSON using JavaScript.
+X 3. Your Rails application must dynamically render on the page at least one 'has-many' relationship through JSON using JavaScript.
 
     In the previous blog domain example, if each of the posts has many comments, you could render those comments as well on that post's show page.
 
-    -- FIRST WE NEED TO GET EVENT SHOW PAGE TO RENDER IN HTML! events have many tasks. on the event show page have a 'see all related tasks button' and render all event tasks with ajax. 
-    -- we will need to modify original event show page to NOT include all tasks 
+    -- events have many tasks. on the event show page have a 'To Do button' and render all event tasks with ajax. 
+    -- this feels really contrived. keep thinking
 
 
 4. Must use your Rails application and JavaScript to render a form for creating a resource that submits dynamically.

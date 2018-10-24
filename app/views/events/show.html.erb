@@ -6,14 +6,11 @@ on <%= @event.date %> from <%=@event.start_time%> until <%=@event.end_time %>
 <p><%= @event.description%></p>
 
 <%= link_to "Edit", edit_event_path(@event)%> <%= link_to "Delete", event_path(@event), method: 'delete' %><br>
-<h3> TO DO </h3>
+<h3><button data-event="<%=@event.id%>" id="eventTasks" onclick="getTasks(this); return false;" type="button">TO DO</button> </h3>
 <hr>
 
 
-<ol><% @event.tasks.each do |task| %>
-    <li><%= link_to task.description, event_task_path(@event, task)  %></li>
-<% end %> </ol>
+<div id="tasks"></div>
+
 </div>
 
-<button data-event="<%=@event.id%>" id="eventTasks" onclick="getTasks(this); return false;" type="button">Show Tasks</button>
-<div id="tasks"></div>
