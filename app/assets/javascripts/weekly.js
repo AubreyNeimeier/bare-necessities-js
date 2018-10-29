@@ -32,6 +32,7 @@ function showEventDetails(event){
 
 
 ////////////////////////FORM HIJACKING ///////////////////////////////////////////////
+//// ISSUE - Submit button disabled after JSON response! 
 $(function newEvent(){
     $("#new_event").submit(function(e){
         e.preventDefault();
