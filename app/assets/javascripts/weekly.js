@@ -17,16 +17,31 @@ function showWeekly(events){
 }
 
 /////////////////    for individual days and events. (the clickable event on each day and the details)
+// ORIGINAL JS SHOW (the link to show extra details about an event on the homepage )
+// function jsEventShow(event){
+//     let id = event.attributes[0].value
+//     $.getJSON(`/events/${id}`, function(event){
+//         $(`#event-details-${id}`).empty()
+//         $(`#event-details-${id}`).append(showEventDetails(event))
+//     })
+// }
+
+
+// function showEventDetails(event){
+//     return `<a class="event-teaser-link" href="/events/${event.id}"> ${event["description"]} - ${event["start_time"]} - ${event["end_time"]} </a>`
+// }
+
+
 function jsEventShow(event){
     let id = event.attributes[0].value
     $.getJSON(`/events/${id}`, function(event){
         $(`#event-details-${id}`).empty()
-        $(`#event-details-${id}`).append(showEventDetails(event))
+        //instatiante a new event prototype and pass in req attributes
+        let jsEvent = new Event(event["title"], event["description"], event["date"])
+        //debugger;
+        // append a pretty formatted string using event prototype method
+        $(`#event-details-${id}`).append(jsEvent.showEventPretty())
     })
-}
-
-function showEventDetails(event){
-    return `<a class="event-teaser-link" href="/events/${event.id}"> ${event["description"]} - ${event["start_time"]} - ${event["end_time"]} </a>`
 }
 
 
@@ -51,6 +66,11 @@ $(function newEvent(){
     })
     
 })
+
+// WORKFLOW FOR JS CLASS model 
+//take json response (data in the done function) and create an event prototype. 
+// call a newly created event prototype function to format the response in a pretty way.  
+
 
 function showNewEvent(event){
     return `<li><button data-event="${event["id"]}" onclick="jsEventShow(this)">${event["title"]}</li>`
@@ -82,3 +102,17 @@ function showTasks(event){
 }
 
 // let form_stuff = `<form id="todoForm" method="delete" action="/tasks/${task.id}">`
+
+
+/// JS EVENT 'CLASS' DEFINITION
+function Event(title, description, date, id){
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        // worry about id later
+    }
+
+    
+Event.prototype.showEventPretty = function(){
+    return `${self.description} !!!`
+}
