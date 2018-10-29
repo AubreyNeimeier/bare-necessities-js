@@ -40,16 +40,15 @@ $(function newEvent(){
         
         //make a post request and route to create action
         var posting = $.post("/events", values);
+        
         posting.done(function(data){
             
             var event = data
             $(`ul.${event["date"]}`).append(showNewEvent(event));
-            
-            //$("#new_event").reset();
-        })
-        
+            document.getElementById("new_event").reset();
+        })        
     })
-    document.getElementById("new_event").reset();
+    
 })
 
 function showNewEvent(event){
