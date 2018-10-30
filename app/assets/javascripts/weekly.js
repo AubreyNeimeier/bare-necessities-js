@@ -62,7 +62,12 @@ $(function newEvent(){
             var event = data
             $(`ul.${event["date"]}`).append(showNewEvent(event));
             document.getElementById("new_event").reset();
-        })        
+        })
+        $("input[name=commit]").disabled = false;
+        //debugger;
+
+        //select the button again in JS and make disabled false
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled
     })
     
 })

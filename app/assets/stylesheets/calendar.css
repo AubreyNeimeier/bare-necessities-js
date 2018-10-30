@@ -99,3 +99,8 @@ a:hover, a:active {
     display: table;
   }
 
+  div#tasks{
+      width: 30%;
+      background-color: aqua; 
+  }
+
