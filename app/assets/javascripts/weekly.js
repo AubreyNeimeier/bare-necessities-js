@@ -40,14 +40,14 @@ function jsEventShow(event){
         let jsEvent = new Event(event["title"], event["description"], event["date"])
         
         // append a pretty formatted string using event prototype method
-        $(`#event-details-${id}`).append(jsEvent.showEventPretty(jsEvent, id))
+        $(`#event-details-${id}`).append(jsEvent.showEventPretty(id))
     })
 }
 
 
 
 ////////////////////////FORM HIJACKING ///////////////////////////////////////////////
-//// ISSUE - Submit button disabled after JSON response! 
+
 $(function newEvent(){
     $("#new_event").submit(function(e){
         e.preventDefault();
@@ -64,10 +64,6 @@ $(function newEvent(){
             document.getElementById("new_event").reset();
         })
         $("input[name=commit]").disabled = false;
-        //debugger;
-
-        //select the button again in JS and make disabled false
-        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled
     })
     
 })
@@ -106,11 +102,7 @@ function showTasks(event){
     return tasks
 }
 
-// let form_stuff = `<form id="todoForm" method="delete" action="/tasks/${task.id}">`
 
-// function deleteTasks(){
-//     debugger
-// }
 
 /// JS EVENT 'CLASS' DEFINITION
 function Event(title, description, date){
@@ -120,6 +112,6 @@ function Event(title, description, date){
     }
 
     
-Event.prototype.showEventPretty = function(jsEvent, id){
-    return `<a class="event-teaser-link" href="/events/${id}"> ${jsEvent.description} </a>`
+Event.prototype.showEventPretty = function(id){
+    return `<a class="event-teaser-link" href="/events/${id}"> ${this.description} </a>`
 }
