@@ -18,6 +18,7 @@ class EventsController < ApplicationController
 
     def show
         @event = Event.find_by(id: params[:id])
+        @task = Task.new
         respond_to do |format|
             format.html {render :show}
             format.json {render json: @event, status: 200}

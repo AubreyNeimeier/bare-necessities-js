@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     end
 
     def destroy
-        binding.pry
+        
         @task = Task.find_by(id: params[:id])
         @task.destroy
         redirect_to user_path(current_user.id)
@@ -48,6 +48,16 @@ class TasksController < ApplicationController
         end
 
     end
+
+    def create_from_event
+        @task = Task.new(task_params)
+        @task.user = current_user
+        @task.save
+        redirect_to event_path(@task.event)
+    end
+
+
+
 
 
     private

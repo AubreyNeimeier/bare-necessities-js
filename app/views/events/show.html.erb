@@ -14,3 +14,17 @@ on <%= @event.date %> from <%=@event.start_time%> until <%=@event.end_time %>
 
 </div>
 
+<h2 class="home_page">Add a Task</h2>
+
+
+<div class="new_task_form">
+  <%= form_for @task, :url => "/tasks_from_event" do |f| %>
+      <%= f.label :event_id %>
+      <%= f.collection_select :event_id, current_user.events, :id, :title, {:prompt => "Select Related Event"}%><br>
+      <%= f.label :description %>
+      <%= f.text_field :description %><br>
+      <%= f.label :status %>
+      <%= f.text_field :status %><br>
+      <%=f.submit "Create Task"%>
+  <% end %>
+</div> 

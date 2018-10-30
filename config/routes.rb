@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post  '/logout' => 'sessions#destroy'
+  post '/tasks_from_event' => 'tasks#create_from_event'
 
   
   get 'auth/:provider/callback', to: 'sessions#create'
