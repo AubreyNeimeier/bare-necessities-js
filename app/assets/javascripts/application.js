@@ -15,6 +15,5 @@
 //= require turbolinks
 
 //= require jquery3
-//= require weekly
 //= require_tree .
 
