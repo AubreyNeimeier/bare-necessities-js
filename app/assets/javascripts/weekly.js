@@ -38,9 +38,9 @@ function jsEventShow(event){
         $(`#event-details-${id}`).empty()
         //instatiante a new event prototype and pass in req attributes
         let jsEvent = new Event(event["title"], event["description"], event["date"])
-        //debugger;
+        
         // append a pretty formatted string using event prototype method
-        $(`#event-details-${id}`).append(jsEvent.showEventPretty())
+        $(`#event-details-${id}`).append(jsEvent.showEventPretty(jsEvent, id))
     })
 }
 
@@ -113,6 +113,6 @@ function Event(title, description, date, id){
     }
 
     
-Event.prototype.showEventPretty = function(){
-    return `${self.description} !!!`
+Event.prototype.showEventPretty = function(jsEvent, id){
+    return `<a class="event-teaser-link" href="/events/${id}"> ${jsEvent.description} </a>`
 }

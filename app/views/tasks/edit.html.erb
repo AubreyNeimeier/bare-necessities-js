@@ -3,7 +3,7 @@
 <h1>Edit this task </h1>
 <h2><%=@event.title%></h2>
 <p><%=@event.date%></p>
-<%= form_for(@task) do |f| %>
+<%= form_for [@event, @task] do |f| %>
     <%= f.label :description %>
     <%= f.text_field :description %><br>
     <%= f.label :status %>

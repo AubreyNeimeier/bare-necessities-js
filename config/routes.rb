@@ -6,7 +6,7 @@ Rails.application.routes.draw do
  
 
   resources :events do 
-    resources :tasks, only: [:show, :edit]
+    resources :tasks, only: [:show, :edit, :update]
   end
 
   get '/signup' =>'users#new'

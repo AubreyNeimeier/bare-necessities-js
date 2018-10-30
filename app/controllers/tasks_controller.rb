@@ -16,6 +16,7 @@ class TasksController < ApplicationController
         @task = Task.find_by(id: params[:id])
         @task.event = @event
         binding.pry
+        
         if @task.update(task_params)
             redirect_to event_task_path(@event, @task)
         else
