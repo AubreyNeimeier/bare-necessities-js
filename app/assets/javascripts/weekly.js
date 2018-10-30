@@ -98,18 +98,20 @@ function showTasks(event){
         return `<input type="checkbox" name="${task.id}" value="${task.id}"><a href="/events/${event_id}/tasks/${task["id"]}"> ${task["description"]} </a><br>`
     })
     
-    return (tasks + `<input type="submit" value="Mark as Complete"> </form>`)
+    return (tasks + `<input type="submit" value="Mark as Complete"> `)
 }
 
 // let form_stuff = `<form id="todoForm" method="delete" action="/tasks/${task.id}">`
 
+// function deleteTasks(){
+//     debugger
+// }
 
 /// JS EVENT 'CLASS' DEFINITION
-function Event(title, description, date, id){
+function Event(title, description, date){
         this.title = title;
         this.description = description;
         this.date = date;
-        // worry about id later
     }
 
     

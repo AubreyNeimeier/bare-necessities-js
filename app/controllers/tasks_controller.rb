@@ -26,6 +26,7 @@ class TasksController < ApplicationController
     end
 
     def destroy
+        binding.pry
         @task = Task.find_by(id: params[:id])
         @task.destroy
         redirect_to user_path(current_user.id)
