@@ -101,6 +101,7 @@ a:hover, a:active {
 
   div#tasks{
       width: 30%;
-      background-color: aqua; 
+      background-color ##989FCE; 
+      text-align: center;
   }
 
