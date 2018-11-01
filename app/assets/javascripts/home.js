@@ -56,10 +56,11 @@ $(function newEvent(){
         e.preventDefault();
         //serialize the values on the form
         var values = $(this).serialize();
+        //debugger;
         
         //make a post request and route to create action
         var posting = $.post("/events", values);
-        
+        //debugger;
         posting.done(function(data){
             
             var event = data
