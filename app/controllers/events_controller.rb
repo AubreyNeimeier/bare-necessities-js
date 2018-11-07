@@ -52,6 +52,7 @@ class EventsController < ApplicationController
         if @event.save
             #binding.pry
             render json: @event, status: 201
+
             #redirect_to event_path(@event)
           
         else

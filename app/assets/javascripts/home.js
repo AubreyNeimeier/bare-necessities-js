@@ -55,15 +55,13 @@ $(function newEvent(){
     $("#new_event").submit(function(e){
         e.preventDefault();
         //serialize the values on the form
-        var values = $(this).serialize();
-        //debugger;
+        let values = $(this).serialize();
+
         
         //make a post request and route to create action
-        var posting = $.post("/events", values);
-        //debugger;
-        posting.done(function(data){
-            
-            var event = data
+        let posting = $.post("/events", values);
+        posting.done(function(event){
+            //debugger;
             $(`ul.${event["date"]}`).append(showNewEvent(event));
             document.getElementById("new_event").reset();
         })
